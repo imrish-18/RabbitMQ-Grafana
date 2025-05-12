@@ -1,0 +1,36 @@
+syntax = "proto3";
+package com.rishabh;
+enum Gender {
+    MALE = 0;
+    FEMALE = 1;
+}
+message Employee{
+    int32 id = 1;
+    string first_name = 2;
+    string last_name = 3;
+    Gender gender = 4;
+    string email = 5;
+    string contact = 6;
+    string password = 7;
+    repeated Department department = 8;
+}
+
+message Department{
+int32 id=1;
+string name=2;
+
+}
+
+message EmployeeRequest{
+    int32 id=1;
+}
+service EmployeeService{
+
+//get employee by id
+
+rpc getEmployee(Employee) returns (Employee);
+
+// add an employee
+rpc addEmployee(Employee) returns (Employee);
+
+}

@@ -1,0 +1,10 @@
+
+
+
+# application.yml
+grpc:
+  server:
+    port: 6565
+    enable-reflection : true
+    security:
+      enabled: false    # ensure TLS is off
